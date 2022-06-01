@@ -1,0 +1,12 @@
+<div class="container">
+    <h1 *ngIf="!productService?.cartItems?.length">Cart is Empty</h1>
+    <cart-item
+      *ngFor="let item of productService.cartItems"
+      [product]="item"
+    ></cart-item>
+  </div>
+  
+  <div>
+    <button mat-button (click)="productService.clearCart()">Clear Cart</button>
+  </div>
+  
